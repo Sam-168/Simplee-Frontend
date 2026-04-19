@@ -7,7 +7,6 @@ export const useAuthStore = defineStore('auth', () => {
   const token = ref(localStorage.getItem('token') || null)
 
   async function login(phone, password) {
-    // Will call the Spring Boot API later when it's time to integrate it
     if (phone === '0712345678' && password === 'password') {
       const fakeToken = 'fake-jwt-token'
       const fakeOwner = {
@@ -24,6 +23,21 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
+  async function signUp(formData) {
+    // Will POST to your Spring Boot API later
+    // For now simulate a successful registration
+    const fakeToken = 'fake-jwt-token'
+    const fakeOwner = {
+      id: 1,
+      name: formData.ownerName,
+      businessName: formData.businessName,
+      phone: formData.phone,
+    }
+    token.value = fakeToken
+    owner.value = fakeOwner
+    localStorage.setItem('token', fakeToken)
+  }
+
   function logout() {
     token.value = null
     owner.value = null
@@ -32,5 +46,5 @@ export const useAuthStore = defineStore('auth', () => {
 
   const isLoggedIn = () => !!token.value
 
-  return { owner, token, login, logout, isLoggedIn }
+  return { owner, token, login, signUp, logout, isLoggedIn }
 })
