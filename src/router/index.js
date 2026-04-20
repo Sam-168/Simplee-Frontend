@@ -13,23 +13,47 @@ import SettingsView from '../views/SettingsView.vue'
 import LandingView from '../views/LandingView.vue'
 
 const routes = [
+  
+  { path: '/welcome', component: LandingView },
   { path: '/book/:slug', component: PublicBookingView },
   { path: '/confirmation', component: ConfirmationView },
   { path: '/login', component: LoginView },
   { path: '/signup', component: SignUpView },
-  { path: '/setup', component: SetupView },
-  { path: '/dashboard', component: DashboardView },
-  { path: '/booking/:id', component: BookingDetailView },
-  { path: '/customers', component: CustomersView },
-  { path: '/share', component: ShareLinkView },
-  { path: '/settings', component: SettingsView },
-  { path: '/welcome', component: LandingView },
-  { path: '/', redirect: '/login' },
+
+  
+  { path: '/setup', component: SetupView, meta: { requiresAuth: true } },
+  { path: '/dashboard', component: DashboardView, meta: { requiresAuth: true } },
+  { path: '/booking/:id', component: BookingDetailView, meta: { requiresAuth: true } },
+  { path: '/customers', component: CustomersView, meta: { requiresAuth: true } },
+  { path: '/share', component: ShareLinkView, meta: { requiresAuth: true } },
+  { path: '/settings', component: SettingsView, meta: { requiresAuth: true } },
+
+ 
+  { path: '/', redirect: '/welcome' },
+
+  
+  { path: '/:pathMatch(.*)*', redirect: '/welcome' },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+
+router.beforeEach((to, from) => {
+  const token = localStorage.getItem('token')
+  const requiresAuth = to.meta.requiresAuth
+
+  
+  if (requiresAuth && !token) {
+    return { path: '/login' }
+  }
+
+  
+  if (token && (to.path === '/login' || to.path === '/signup')) {
+    return { path: '/dashboard' }
+  }
 })
 
 export default router
