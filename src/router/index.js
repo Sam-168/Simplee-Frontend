@@ -10,6 +10,7 @@ import BookingDetailView from '../views/BookingDetailView.vue'
 import CustomersView from '../views/CustomersView.vue'
 import ShareLinkView from '../views/ShareLinkView.vue'
 import SettingsView from '../views/SettingsView.vue'
+import LandingView from '../views/LandingView.vue'
 
 const routes = [
   { path: '/book/:slug', component: PublicBookingView },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/customers', component: CustomersView },
   { path: '/share', component: ShareLinkView },
   { path: '/settings', component: SettingsView },
+  { path: '/welcome', component: LandingView },
   { path: '/', redirect: '/login' },
 ]
 
