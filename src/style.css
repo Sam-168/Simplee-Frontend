@@ -1,1 +1,87 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Geist', sans-serif;
+}
+
+* {
+  font-family: 'Geist', sans-serif;
+}
+
+/* ── Brand color variable — change once, updates everywhere ── */
+:root {
+  --brand: rgb(41, 111, 208);
+  --brand-hover: rgb(31, 91, 178);
+  --brand-light: rgba(41, 111, 208, 0.08);
+  --brand-ring: rgba(41, 111, 208, 0.14);
+  --brand-border: rgba(41, 111, 208, 0.3);
+}
+
+/* ────────────────────────────────
+   BORDERS — cards, divs, sections
+   ──────────────────────────────── */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r {
+  border-color: var(--brand-border) !important;
+}
+
+/* ────────────────────────────────
+   INPUTS
+   ──────────────────────────────── */
+input,
+select,
+textarea {
+  border: 1px solid var(--brand-border) !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px var(--brand-ring) !important;
+  outline: none !important;
+}
+
+/* ────────────────────────────────
+   BUTTONS — universal hover
+   ──────────────────────────────── */
+
+/* Default: any button that isn't black or explicitly coloured */
+button:not(:disabled) {
+  transition: all 0.15s ease;
+}
+
+/* Light/outline buttons → blue tint on hover */
+button:not(:disabled):not(.btn-black):not(.btn-wa):hover {
+  background-color: var(--brand-light) !important;
+  border-color: var(--brand) !important;
+  color: var(--brand) !important;
+}
+
+/* Black primary buttons → darker blue on hover */
+button.btn-black:not(:disabled):hover {
+  background-color: var(--brand-hover) !important;
+  border-color: var(--brand-hover) !important;
+  color: white !important;
+}
+
+/* WhatsApp button stays its own style */
+button.btn-wa:not(:disabled):hover {
+  opacity: 0.88;
+}
+
+/* ────────────────────────────────
+   CLICKABLE CARDS & ROWS
+   ──────────────────────────────── */
+[class*="cursor-pointer"] {
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+[class*="cursor-pointer"]:hover {
+  border-color: var(--brand) !important;
+  background-color: var(--brand-light) !important;
+}

@@ -15,7 +15,7 @@
         <p class="text-sm font-medium text-gray-900 break-all mb-3">{{ bookingLink }}</p>
         <button
           @click="copyLink"
-          class="w-full h-11 border border-gray-200 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2"
+          class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2"
           :class="copied ? 'bg-black text-white border-black' : 'text-gray-900 active:bg-gray-50'"
         >
           <svg v-if="!copied" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -33,7 +33,7 @@
       <div class="flex gap-2">
         <button
           @click="shareWhatsApp"
-          class="flex-1 h-12 bg-black text-white text-sm font-medium rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform"
+          class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform"
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <circle cx="9" cy="9" r="8" stroke="white" stroke-width="1.2"/>
@@ -68,7 +68,7 @@
 
         <button
           @click="downloadQR"
-          class="w-full h-11 border border-gray-200 rounded-xl text-sm font-medium text-gray-900 flex items-center justify-center gap-2 active:bg-gray-50 transition-colors"
+          class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl text-sm font-medium text-gray-900 flex items-center justify-center gap-2 active:bg-gray-50 transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 2v9M4 8l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>

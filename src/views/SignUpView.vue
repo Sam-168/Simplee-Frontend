@@ -48,7 +48,7 @@
     <button
       @click="handleSignUp"
       :disabled="loading || !isFormValid"
-      class="w-full h-12 bg-black text-white text-sm font-medium rounded-xl mt-5 disabled:opacity-30 active:scale-95 transition-transform"
+      class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl mt-5 disabled:opacity-30 active:scale-95 transition-transform"
     >
       {{ loading ? 'Creating account...' : 'Create account' }}
     </button>
@@ -63,7 +63,7 @@
     <!-- Login link -->
     <button
       @click="router.push('/login')"
-      class="w-full h-12 border border-gray-200 text-gray-900 text-sm font-medium rounded-xl active:bg-gray-50 transition-colors"
+      class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl active:bg-gray-50 transition-colors"
     >
       Already have an account
     </button>

@@ -75,7 +75,7 @@
       </div>
       <button
         @click="router.push('/share')"
-        class="w-full h-12 bg-black text-white text-sm font-medium rounded-xl active:scale-95 transition-transform"
+        class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl active:scale-95 transition-transform"
       >
         Share my booking link
       </button>

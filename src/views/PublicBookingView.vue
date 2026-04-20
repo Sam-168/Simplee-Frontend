@@ -24,7 +24,7 @@
           </div>
           <div
             class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors"
-            :class="selectedService?.id === service.id ? 'bg-black border-black' : 'border-gray-300'"
+            :class="selectedService?.id === service.id ? 'bg-[rgb(41,111,208)] border-[rgb(41,111,208)]': 'border-gray-300'"
           >
             <svg v-if="selectedService?.id === service.id" width="10" height="10" viewBox="0 0 10 10" fill="none">
               <path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -53,12 +53,12 @@
             @click="!slot.taken && (selectedTime = slot.time)"
             class="h-10 rounded-xl border text-sm transition-colors"
             :class="
-              slot.taken
-                ? 'border-gray-100 text-gray-300 line-through cursor-not-allowed'
-                : selectedTime === slot.time
-                ? 'bg-black border-black text-white font-medium'
-                : 'border-gray-200 text-gray-900 active:bg-gray-50'
-            "
+            slot.taken
+              ? 'border-gray-100 text-gray-300 line-through cursor-not-allowed'
+              : selectedTime === slot.time
+              ? 'bg-[rgb(41,111,208)] border-[rgb(41,111,208)] text-white font-medium'
+              : 'border-gray-200 text-gray-900 active:bg-gray-50'
+          "
           >
             {{ slot.time }}
           </button>
@@ -96,7 +96,7 @@
       <button
         @click="submitBooking"
         :disabled="!form.name || !form.phone"
-        class="w-full h-12 bg-black text-white text-sm font-medium rounded-xl disabled:opacity-30 active:scale-95 transition-transform"
+        class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl disabled:opacity-30 active:scale-95 transition-transform"
       >
         Confirm booking
       </button>

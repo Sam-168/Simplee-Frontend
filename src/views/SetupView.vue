@@ -7,21 +7,21 @@
       <p class="text-sm text-gray-400 mt-1">Customers will choose from these</p>
     </div>
 
-    <!-- Business type toggle -->
+    <!-- Business type toggle: TODO fix toggle button color story -->
     <div class="mb-6">
       <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Business type</p>
       <div class="flex border border-gray-200 rounded-xl overflow-hidden">
         <button
           @click="businessType = 'bookings'"
           class="flex-1 h-11 text-sm font-medium transition-colors"
-          :class="businessType === 'bookings' ? 'bg-black text-white' : 'text-gray-400'"
+          :class="businessType === 'bookings' ? 'bg-[rgb(41,111,208)] text-white' : 'text-gray-400'"
         >
           Bookings
         </button>
         <button
           @click="businessType = 'orders'"
           class="flex-1 h-11 text-sm font-medium transition-colors"
-          :class="businessType === 'orders' ? 'bg-black text-white' : 'text-gray-400'"
+          :class="businessType === 'orders' ? 'bg-[rgb(41,111,208)] text-white' : 'text-gray-400'"
         >
           Orders
         </button>
@@ -58,7 +58,7 @@
       <button
         @click="addService"
         :disabled="!newService.name"
-        class="w-full h-11 border border-gray-200 text-gray-900 text-sm font-medium rounded-xl mt-3 disabled:opacity-30 active:bg-gray-50 transition-colors"
+        class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl mt-3 disabled:opacity-30 active:bg-gray-50 transition-colors"
       >
         + Add {{ businessType === 'bookings' ? 'service' : 'item' }}
       </button>
@@ -92,7 +92,7 @@
     <button
       @click="handleFinish"
       :disabled="loading || services.length === 0"
-      class="w-full h-12 bg-black text-white text-sm font-medium rounded-xl disabled:opacity-30 active:scale-95 transition-transform"
+      class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl disabled:opacity-30 active:scale-95 transition-transform"
     >
       {{ loading ? 'Saving...' : 'Finish setup' }}
     </button>

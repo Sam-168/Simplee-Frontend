@@ -70,7 +70,7 @@
           @click="selectedStatus = status"
           class="flex-1 h-11 rounded-xl border text-sm font-medium transition-colors"
           :class="selectedStatus === status
-            ? 'bg-black border-black text-white'
+            ? 'btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl'
             : 'border-gray-200 text-gray-500 active:bg-gray-50'"
         >
           {{ status }}
@@ -80,7 +80,7 @@
       <button
         @click="saveStatus"
         :disabled="selectedStatus === booking.status || loading"
-        class="w-full h-12 bg-black text-white text-sm font-medium rounded-xl mt-3 disabled:opacity-30 active:scale-95 transition-transform"
+        class="btn-black w-full h-12 bg-black text-white text-sm font-medium rounded-xl mt-3 disabled:opacity-30 active:scale-95 transition-transform"
       >
         {{ loading ? 'Saving...' : 'Save changes' }}
       </button>
