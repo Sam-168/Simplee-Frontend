@@ -3,7 +3,7 @@
 
     <!-- Nav -->
     <nav class="flex items-center justify-between px-5 py-4 md:px-12 lg:px-20 border-b border-gray-100">
-      <p class="text-base font-medium text-gray-900">Bookme</p>
+      <p class="text-base font-medium text-gray-900">Simplee</p>
       <div class="flex items-center gap-3">
         <button
           @click="router.push('/login')"
@@ -27,7 +27,7 @@
           class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 text-xs text-gray-500 font-medium mb-6"
         >
           <span class="w-1.5 h-1.5 rounded-full bg-[rgb(41,111,208)]"></span>
-          Built for township businesses
+          Book fast, book easy.
         </div>
 
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight mb-5">
@@ -126,7 +126,7 @@
 
     <!-- Footer -->
     <footer class="px-5 py-6 md:px-12 lg:px-20 border-t border-gray-100 flex items-center justify-between">
-      <p class="text-sm font-medium text-gray-900">Bookme</p>
+      <p class="text-sm font-medium text-gray-900">Simplee</p>
       <p class="text-xs text-gray-400">Built for township businesses</p>
     </footer>
 
