@@ -50,10 +50,10 @@ router.beforeEach((to, from) => {
     return { path: '/login' }
   }
 
-  //redirect to login if someone tries to hit an endpoint directly
-  if (token && (to.path === '/dashboard' || to.path === '/signup' || to.path === '/setup')) {
-    return { path: '/login' }
-  }
+  //redirect to login if someone tries to hit an endpoint directly(doesn't work)
+  // if (token && (to.path === '/login' || to.path === '/signup' || to.path === '/welcome')) {
+  //   return { path: '/dashboard' }
+  // }
 })
 
 export default router

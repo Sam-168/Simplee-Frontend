@@ -106,8 +106,8 @@ const copied = ref(false)
 const qrCanvas = ref(null)
 
 // Will use the real business slug from auth store later
-const bookingLink = 'bookme.app/nails-by-zanele'
-const fullLink = 'https://bookme.app/nails-by-zanele'
+const bookingLink = 'simplee.app/nails-by-zanele'
+const fullLink = 'https://simplee.app/nails-by-zanele'
 
 const tips = [
   'Copy your link and paste it into your WhatsApp status so customers can tap it directly.',

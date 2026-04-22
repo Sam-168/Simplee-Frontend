@@ -67,13 +67,14 @@ const authStore = useAuthStore()
 const form = ref({ phone: '', password: '' })
 const error = ref('')
 const loading = ref(false)
-
+console.log("login button clicked?");
 async function handleLogin() {
   error.value = ''
   loading.value = true
 
   try {
     await authStore.login(form.value.phone, form.value.password)
+    console.log("called authStore function");
     router.push('/dashboard')
   } catch (e) {
     error.value = 'Incorrect phone number or password'
